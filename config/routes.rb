@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/' =>'homes#top'
   post 'books' => 'lists#create'
   get 'books' => 'lists#index'
+  
   resources :books
 end
 
