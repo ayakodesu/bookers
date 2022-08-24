@@ -4,17 +4,17 @@ class ListsController < ApplicationController
   end
 
   def create
-end
+  end
 
   def index
-
   end
 
   def show
-    @book = Book.find(params[:id])
+    @book = Book.find_by(params[:id])
   end
 
 
-   def edit
-end
+  def edit
+    @book = Book.find_by(params[:id])
+  end
 end

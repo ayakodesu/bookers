@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'books' => 'lists#create'
   get 'books' => 'lists#index'
   get 'books/:id' =>'lists#show'
+  get 'books/:id' =>'lists#edit'
   resources :books
 end
 
