@@ -22,13 +22,18 @@ class ListsController < ApplicationController
   def edit
     @book = Book.find_by(params[:id])
   end
-  
+
+  def update
+
+  end
+
+
   def destroy
-    @book = Book.find_by(params[:id])
+    book = Book.find(params[:id])
     book.destroy
     redirect_to '/books'
-    
-   
+
+
   end
 
   private
