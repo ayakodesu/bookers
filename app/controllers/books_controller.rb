@@ -1,6 +1,4 @@
 class BooksController < ApplicationController
-
-
-    
+ 
 end
 
