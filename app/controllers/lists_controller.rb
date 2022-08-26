@@ -4,9 +4,14 @@ class ListsController < ApplicationController
   end
 
   def create
+    @book = Book.new(book_params)
+    @book.save
+  
+
   end
 
   def index
+    @books = Book.all
   end
 
   def show
@@ -15,6 +20,12 @@ class ListsController < ApplicationController
 
 
   def edit
-    @book = Book.find_by(params[:id])
+    @book = Book.find_by(params[:format])
+  
+  end
+
+  private
+  def book_params
+    params.require(:book).parmit(:title, :body)
   end
 end
