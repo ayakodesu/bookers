@@ -1,5 +1,5 @@
 <h1>Editing Book</h1>
-<%= form_with model: @book do |f| %>
+
 <div class="field">
     <%= f.label :Title, "Title" %>
     <%= f.text_field :title %>
@@ -10,8 +10,9 @@
 </div>
 <div class="action">
     <%= f.submit 'Update Book' %>
+    
 </div>
 <% end %>
 
     <a class="show_93968" href="/books/93968/">show</a> |
-    <a class="back" href="/books">Back</a>
+    <a class="back" href="/books">Back</a>>

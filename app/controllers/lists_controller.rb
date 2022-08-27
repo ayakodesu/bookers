@@ -6,9 +6,8 @@ class ListsController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.save
-    redirect_to 'books\index'
-
   end
+  
 
   def index
     @books = Book.all
@@ -19,17 +18,11 @@ class ListsController < ApplicationController
   end
 
 
-  def edit
-    @book = Book.find_by(params[:id])
-  end
 
-  def update
-
-  end
 
 
   def destroy
-    book = Book.find(params[:id])
+    book = Book.find_by(params[:id])
     book.destroy
     redirect_to '/books'
 
@@ -39,5 +32,6 @@ class ListsController < ApplicationController
   private
   def book_params
     params.require(:book).parmit(:title, :body)
+  end
   end
 end
