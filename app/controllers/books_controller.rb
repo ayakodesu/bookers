@@ -15,19 +15,25 @@ def create
 end
 
 def show
-    @book = Book.find_by(params[:id])
+    @book = Book.find(params[:book_id])
 end
   
   
   def update
-  @book = book.find(params[:id])
-  @book = @book.update(post_params)
-  redirect_to books_path
+  book = book.find(params[:id])
+  book.update(book_params)
+  redirect_to books_path(book.id)
   
   end
   
   def edit
-    @book = Book.find_by(params[:id])
+    @book = Book.find(params[:id])
+  end
+  
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to '/books'
   end
   
   private

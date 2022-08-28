@@ -17,7 +17,9 @@ class ListsController < ApplicationController
     @book = Book.find_by(params[:id])
   end
 
-
+  def edit
+    @book = Book.find_by(params[:id])
+  end
 
 
 
@@ -34,4 +36,3 @@ class ListsController < ApplicationController
     params.require(:book).parmit(:title, :body)
   end
   end
-end
